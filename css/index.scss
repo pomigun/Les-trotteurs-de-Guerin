@@ -22,6 +22,15 @@ body {
         & .nav-item {
             font-size: 2.5rem;
         }
+        & .navbar-toggler {
+            width: 4em;
+            height: 4em;
+
+            & .navbar-toggler-icon {
+                width: 3em;
+                height: 3em;
+            }
+        }
     }
     & main {
         display: grid;
