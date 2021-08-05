@@ -5,3 +5,123 @@ $secondary-color: #757f49;
     margin: 0;
     padding: 0;
 }
+body {
+    font-family: 'Arvo', serif;
+    color: white;
+    width: 100%;
+    height: auto;
+    background-color: $primary-color;
+
+    & .navbar {
+        padding: 2rem;
+        background-color: $secondary-color;
+
+        & .navbar-brand {
+            font-size: 4rem;
+        }
+        & .nav-item {
+            font-size: 2.5rem;
+        }
+    }
+    & main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40em auto auto;
+        width: 100%;
+        height: auto;
+
+        & section {
+            & h2 {
+                font-weight: bold;
+                font-size: 3em;
+                margin-bottom: 1em;
+                text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            }
+            & p {
+                font-size: 2em;
+                text-align: center;
+                margin-bottom: 1em;
+            }
+            &:nth-of-type(1) {
+                & .main-img-wrapper {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+
+                    & figure {
+                        min-width: 100%;
+                        min-height: 100%;
+                        background-image: url("../img/mountain.webp");
+                        background-position: center;
+                        background-size: cover;
+                        box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+                    }
+                    & p {
+                        position: absolute;
+                        font-size: 3em;
+                    }
+                    & .catchphrase-1 {
+                        top: 6em;
+                        left: 1em;
+                    }
+                    & .catchphrase-2 {
+                        top: 7.5em;
+                        left: 2em;
+                    }
+                    & .catchphrase-3 {
+                        top: 9em;
+                        left: 3em;
+                    }
+                }
+            }
+            &:nth-of-type(2) {
+                margin-top: 2em;
+                padding: 2em;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+
+                & .img-wrapper {
+                    width: 100%;
+                    height: 20em;
+
+                    & figure {
+                        min-width: 100%;
+                        min-height: 100%;
+                        background-image: url("../img/people.webp");
+                        background-position: center;
+                        background-size: cover;
+                        box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.2);
+                        border-radius: 4em;
+                    }
+                }
+            }
+            &:nth-of-type(3) {
+                margin-top: 2em;
+                padding: 2em;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+            }
+        }
+    }
+    & footer {
+        height: 8em;
+        width: 100%;
+        background-color: $secondary-color;
+
+        & .social {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            & a {
+                & img {
+                    width: 4em;
+                }
+            }
+        }
+    }
+}
