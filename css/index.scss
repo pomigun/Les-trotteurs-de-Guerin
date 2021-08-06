@@ -120,6 +120,11 @@ body {
                 flex-flow: column nowrap;
                 align-items: center;
 
+                & .egg {
+                    font-weight: bolder;
+                    text-decoration: none;
+                    color: white;
+                }
                 & .iframe-wrapper {
                     display: none;
                 }
