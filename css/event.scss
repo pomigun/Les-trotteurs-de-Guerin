@@ -13,7 +13,7 @@ body {
     font-family: 'Arvo', serif;
     color: white;
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     background-color: $primary-color;
 
     & .navbar {
@@ -49,9 +49,16 @@ body {
             display: grid;
 
             & .no-boot-card {
+                grid-template-columns: repeat(3,1fr);
+                border-radius: 5em;
+                box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
+                background-image: $card-gradiant;
                 display: grid;
+                overflow: hidden;
             }
             & h2 {
+                grid-area: 1/1/2/span 3;
+                place-self: center;
                 text-align: center;
                 width: 100%;
                 font-size: 3em;
@@ -59,24 +66,56 @@ body {
                 padding: 0.5em;
             }
             & p {
+                grid-area: 3/1/4/span 3;
                 text-align: center;
                 font-size: 2.5em;
                 padding: 1em;
             }
             & ul {
                 font-size: 1.9em;
+                align-self: center;
+                list-style: none;
+                grid-area: 4/1/span 2/span 2;
+                margin-left: 1em;
+            }
+            & .img-wrapper {
+                grid-area: 2/1/3/span 3;
+
+                & figure {
+                    min-width: 100%;
+                    min-height: 100%;
+                    background-position: top;
+                    background-size: cover;
+                    box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
+                }
+            }
+            & .button-participate {
+                background-color: $button-color;
+                border: none;
+                border-radius: 1em;
+                place-self: center;
+                height: 4.5em;
+                width: 15em;
+                margin: 0.5em;
+                margin-bottom: 2em;
+                margin-right: 4em;
+                grid-area: 4/3/5/4;
+                transition: transform 0.2s;
+                box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
+
+                & a {
+                    font-size: 1.5em;
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+            & .button-participate:hover {
+                transform: scale(1.2);
             }
             &:nth-of-type(1){
                 & .no-boot-card {
-                    background-image: $card-gradiant;
-                    grid-template-columns: repeat(3,1fr);
                     grid-template-rows: auto 25em repeat(2, auto);
-                    border-radius: 5em;
-                    box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
 
-                    & h2 {
-                        grid-area: 1/1/2/span 3;
-                    }
                     & .img-wrapper {
                         grid-area: 2/1/3/span 3;
 
@@ -89,51 +128,12 @@ body {
                             box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
                         }
                     }
-                    & p {
-                        grid-area: 3/1/4/span 3;
-                    }
-                    & ul {
-                        align-self: center;
-                        list-style: none;
-                        grid-area: 4/1/span 2/span 2;
-                        margin-left: 1em;
-                    }
-                    & .button-participate {
-                        background-color: $button-color;
-                        border: none;
-                        border-radius: 1em;
-                        place-self: center;
-                        height: 4em;
-                        width: 15em;
-                        margin: 0.5em;
-                        margin-bottom: 2em;
-                        margin-right: 4em;
-                        grid-area: 4/3/5/4;
-                        transition: transform 0.2s;
-                        box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
-
-                        & a {
-                            font-size: 1.5em;
-                            color: white;
-                            text-decoration: none;
-                        }
-                    }
-                    & .button-participate:hover {
-                        transform: scale(1.2);
-                    }
                 }
             }
             &:nth-of-type(2){
                 & .no-boot-card {
-                    background-image: $card-gradiant;
-                    grid-template-columns: repeat(3,1fr);
                     grid-template-rows: auto 30em repeat(2, auto);
-                    border-radius: 5em;
-                    box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
 
-                    & h2 {
-                        grid-area: 1/1/2/span 3;
-                    }
                     & .img-wrapper {
                         grid-area: 2/1/3/span 3;
 
@@ -146,51 +146,12 @@ body {
                             box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
                         }
                     }
-                    & p {
-                        grid-area: 3/1/4/span 3;
-                    }
-                    & ul {
-                        align-self: center;
-                        list-style: none;
-                        grid-area: 4/1/span 2/span 2;
-                        margin-left: 1em;
-                    }
-                    & .button-participate {
-                        background-color: $button-color;
-                        border: none;
-                        border-radius: 1em;
-                        place-self: center;
-                        height: 4em;
-                        width: 15em;
-                        margin: 0.5em;
-                        margin-bottom: 2em;
-                        margin-right: 4em;
-                        grid-area: 4/3/5/4;
-                        transition: transform 0.2s;
-                        box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
-
-                        & a {
-                            font-size: 1.5em;
-                            color: white;
-                            text-decoration: none;
-                        }
-                    }
-                    & .button-participate:hover {
-                        transform: scale(1.2);
-                    }
                 }
             }
             &:nth-of-type(3){
                 & .no-boot-card {
-                    background-image: $card-gradiant;
-                    grid-template-columns: repeat(3,1fr);
                     grid-template-rows: auto 25em repeat(2, auto);
-                    border-radius: 5em;
-                    box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
 
-                    & h2 {
-                        grid-area: 1/1/2/span 3;
-                    }
                     & .img-wrapper {
                         grid-area: 2/1/3/span 3;
 
@@ -202,38 +163,6 @@ body {
                             background-size: cover;
                             box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
                         }
-                    }
-                    & p {
-                        grid-area: 3/1/4/span 3;
-                    }
-                    & ul {
-                        align-self: center;
-                        list-style: none;
-                        grid-area: 4/1/span 2/span 2;
-                        margin-left: 1em;
-                    }
-                    & .button-participate {
-                        background-color: $button-color;
-                        border: none;
-                        border-radius: 1em;
-                        place-self: center;
-                        height: 4em;
-                        width: 15em;
-                        margin: 0.5em;
-                        margin-bottom: 2em;
-                        margin-right: 4em;
-                        grid-area: 4/3/5/4;
-                        transition: transform 0.2s;
-                        box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
-
-                        & a {
-                            font-size: 1.5em;
-                            color: white;
-                            text-decoration: none;
-                        }
-                    }
-                    & .button-participate:hover {
-                        transform: scale(1.2);
                     }
                 }
             }
@@ -259,4 +188,184 @@ body {
         }
     }
 }
-@media (min-width: $breakpoint-desktop){}
+@media (min-width: $breakpoint-desktop) {
+    body {
+        font-family: 'Arvo', serif;
+        color: white;
+        width: 100%;
+        min-height: 100vh;
+        background-color: $primary-color;
+
+        & .navbar {
+            padding: 1rem;
+            background-color: $secondary-color-t;
+
+            & .navbar-brand {
+                font-size: 1.6rem;
+            }
+            & .nav-item {
+                font-size: 1rem;
+            }
+            & .navbar-toggler {
+                width: 1em;
+                height: 1em;
+                border: none;
+
+                & .navbar-toggler-icon {
+                    width: 1em;
+                    height: 1em;
+                }
+            }
+        }
+        & main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(1em, auto));
+            grid-template-rows: repeat(auto-fit, auto);
+            margin-top: 2em;
+            margin-bottom: 2em;
+
+            & section {
+                padding: 2rem;
+                display: grid;
+
+                & .no-boot-card {
+                    grid-template-columns: repeat(3,1fr);
+                    border-radius: 5em;
+                    box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
+                    background-image: $card-gradiant;
+                    display: grid;
+                    overflow: hidden;
+                }
+                & h2 {
+                    grid-area: 1/1/2/span 3;
+                    place-self: center;
+                    text-align: center;
+                    width: 100%;
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    padding: 1em;
+                }
+                & p {
+                    grid-area: 3/1/4/span 3;
+                    text-align: center;
+                    font-size: 1.25em;
+                    padding: 1em;
+                }
+                & ul {
+                    font-size: 0.95em;
+                    align-self: center;
+                    list-style: none;
+                    grid-area: 4/1/span 2/span 2;
+                    margin-left: 1em;
+                }
+                & .img-wrapper {
+                    grid-area: 2/1/3/span 3;
+
+                    & figure {
+                        min-width: 100%;
+                        min-height: 100%;
+                        background-position: top;
+                        background-size: cover;
+                        box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
+                    }
+                }
+                & .button-participate {
+                    background-color: $button-color;
+                    border: none;
+                    border-radius: 1em;
+                    place-self: center;
+                    height: 3em;
+                    width: 9em;
+                    margin: 0.5em;
+                    margin-bottom: 2em;
+                    margin-right: 2em;
+                    grid-area: 4/3/5/4;
+                    transition: transform 0.2s;
+                    box-shadow: 1.5em 1.5em 2em rgba(0, 0, 0, 0.2);
+
+                    & a {
+                        font-size: 1em;
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+                & .button-participate:hover {
+                    transform: scale(1.2);
+                }
+                &:nth-of-type(1){
+                    & .no-boot-card {
+                        grid-template-rows: auto 15em repeat(2, auto);
+
+                        & .img-wrapper {
+                            grid-area: 2/1/3/span 3;
+
+                            & figure {
+                                min-width: 100%;
+                                min-height: 100%;
+                                background-image: url(../img/altar.webp);
+                                background-position: top;
+                                background-size: cover;
+                                box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(2){
+                    & .no-boot-card {
+                        grid-template-rows: auto 20em repeat(2, auto);
+
+                        & .img-wrapper {
+                            grid-area: 2/1/3/span 3;
+
+                            & figure {
+                                min-width: 100%;
+                                min-height: 100%;
+                                background-image: url(../img/cabin.webp);
+                                background-position: top;
+                                background-size: cover;
+                                box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(3){
+                    & .no-boot-card {
+                        grid-template-rows: auto 15em repeat(2, auto);
+
+                        & .img-wrapper {
+                            grid-area: 2/1/3/span 3;
+
+                            & figure {
+                                min-width: 100%;
+                                min-height: 100%;
+                                background-image: url(../img/museum.webp);
+                                background-position: top;
+                                background-size: cover;
+                                box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & footer {
+            height: 3.5em;
+            width: 100%;
+            background-color: $secondary-color;
+
+            & .social {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+
+                & a {
+                    & img {
+                        width: 2.5em;
+                    }
+                }
+            }
+        }
+    }
+}
